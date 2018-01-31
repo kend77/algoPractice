@@ -25,12 +25,10 @@ function vowels(str) {
 }
 
 // function vowels(str) {
-//   let vowelsRegEx = /[aeiou]/i
-//   let count = 0
-//   for(let char of str) {
-//     vowelsRegEx.test(char) ? count++ : ''
-//   }
-//   return count
+//   let vowelsRegEx = /[aeiou]/ig
+//   let matches = str.match(vowelsRegEx)
+//   return matches ? matches.length : 0
 // }
+
 
 module.exports = vowels;
