@@ -24,4 +24,13 @@ function vowels(str) {
   return count
 }
 
+// function vowels(str) {
+//   let vowelsRegEx = /[aeiou]/i
+//   let count = 0
+//   for(let char of str) {
+//     vowelsRegEx.test(char) ? count++ : ''
+//   }
+//   return count
+// }
+
 module.exports = vowels;
