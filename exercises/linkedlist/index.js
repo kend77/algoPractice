@@ -106,11 +106,33 @@ class LinkedList {
     nodeBefore.next = nodeBefore.next.next
     }
   }
+  insertAt(data, index) {
+    if(index > this.size() - 1) {
+      this.insertLast(data)
+    } else {
+      if(index === 0) {
+        const newNode = new Node(data)
+        newNode.next = this.head
+        this.head = newNode
+      } else {
+        const nodeBefore = this.getAt(index - 1)
+        const newNode = new Node(data, nodeBefore.next)
+        nodeBefore.next = newNode
+      }
+  }
 
+  }
   forEach(fn) {
     let currentNode = this.head
     while(currentNode !== null) {
       fn(currentNode)
+      currentNode = currentNode.next
+    }
+  }
+  *[Symbol.iterator] () {
+    let currentNode = this.head
+    while(currentNode !== null) {
+      yield currentNode
       currentNode = currentNode.next
     }
   }
