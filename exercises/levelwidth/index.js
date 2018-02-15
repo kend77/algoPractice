@@ -14,13 +14,12 @@
 function levelWidth(root) {
   let queue = [root, 's']
   let counters = [0]
-
   while(queue.length > 1) {
     let current = queue.shift()
-
     if(current === 's') {
-      counters.push(0)
       queue.push('s')
+      counters.push(0)
+
     } else {
       queue.push(...current.children)
       counters[counters.length - 1]++
@@ -28,7 +27,5 @@ function levelWidth(root) {
   }
   return counters
 }
-
-
 
 module.exports = levelWidth;
